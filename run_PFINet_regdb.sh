@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python run.py --test 1 --dataset regdb --model PFINet --resume /public/home/G19940018/VideoGroup/SWB/code/Re-ID/0.0Cross_Modality_ReID/checkpoints/regdb/RGB_to_Infrared/Rgb_to_Gray_FPN_3840_4*4/save1.pth.tar

@@ -1,0 +1,61 @@
+dataset: sysu
+model: PFINet
+info: Rgb_to_Gray_FPN_B_channel_5888
+fp16: false
+rerank: false
+
+#output
+feature_dim: 5888
+
+#model
+mutual_learning: false
+
+# dataset
+sample_method: identity_random
+RGB_to_Infrared: false
+R_channel: true
+Learning_W_RGB: false
+
+#sysu
+image_size: (384, 128)
+#Regdb
+#image_size: (256, 128)
+batch_size: 128
+p_size: 16
+k_size: 8
+
+# optimizer
+lr: 0.00035
+optimizer: adam  #['adam','sgd']
+num_epoch: 240
+lr_step: [90, 150, 200]
+lr_scheduler: MultiStepLR   #['MultiStepLR','Consine']
+warmup: 20
+# train epochs
+log_period: 150
+start_eval: 10
+eval_interval: 10
+
+# augmentation
+random_flip: true
+random_crop: true
+random_erase: true
+color_jitter: false
+padding: 10
+
+#loss
+Triplet_loss: false
+center_loss: false
+cluster_loss: false
+CMTriplet_loss: false
+hetero_loss: false
+id_loss: true
+range_loss: false
+CenterTripletLoss: true
+CircleLoss: false
+Triplet_margin: 0.5
+CMTriplet_margin: 0.5
+CenterTriplet_margin: 0.7
+
+#resume
+resume: None
